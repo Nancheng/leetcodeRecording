@@ -1,0 +1,12 @@
+public class Solution {
+    public char findTheDifference(String s, String t) {
+        
+        char[] arrayComb = (s+t).toCharArray();
+        int valueAscii=0;
+        
+        for(int i = 0; i<arrayComb.length;i++){
+            valueAscii ^= (int)arrayComb[i];
+        }
+        return (char)valueAscii;
+    }
+}
