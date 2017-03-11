@@ -1,0 +1,33 @@
+//我自己的想法，我这么做是因为以为题目只需要返回剩余数组的长度就行，这样的话我只需要去数不同的次数，
+//但是oj没有通过，发现题目检测的时候检测的是返回的数组，
+//也就是说需要把不同值的元素挪到前面（或者说挪到一起。）
+public class Solution {
+    public int removeDuplicates(int[] nums) {
+        int count=0;
+        int i = 0;
+        
+        while(i<nums.length-1){
+            if(nums[i]!=nums[i+1]){
+               count++; 
+            }
+            i++;
+        }
+        
+        return count+1;
+    }
+}
+
+//下面这个参考了一下别人的代码。
+public class Solution {
+    public int removeDuplicates(int[] nums) {
+        int cnt = 0, length = nums.length;
+        for(int i = 0; i < length;++i){
+            if(i+1< length && nums[i] == nums[i+1]){
+                continue;
+            }else{
+                nums[cnt++] = nums[i];// 将不重复的元素放置到对应的位置
+            }
+        }
+        return cnt;
+    }
+}
