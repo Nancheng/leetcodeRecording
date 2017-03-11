@@ -17,12 +17,12 @@ public class Solution {
     }
 }
 
-//下面这个参考了一下别人的代码。
+//下面这个参考了一下别人的代码。还是感觉题目有点问题，返回值还是部分长度，数组里剩余的也是个不对的数组（只有前半部分是对的），但就是这样的才可以过。
 public class Solution {
     public int removeDuplicates(int[] nums) {
         int cnt = 0, length = nums.length;
-        for(int i = 0; i < length;++i){
-            if(i+1< length && nums[i] == nums[i+1]){
+        for(int i = 0; i < length;i++){
+            if(i< length-1 && nums[i] == nums[i+1]){
                 continue;
             }else{
                 nums[cnt++] = nums[i];// 将不重复的元素放置到对应的位置
