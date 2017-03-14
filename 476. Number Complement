@@ -1,0 +1,13 @@
+public class Solution {
+    public int findComplement(int num) {
+
+        int large = 0;
+        int i = 0;
+        
+        while(large<num){
+            large += Math.pow(2,i);
+            i++;
+        }
+        return large - num;        
+    }
+}
