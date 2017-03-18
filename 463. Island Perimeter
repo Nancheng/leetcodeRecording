@@ -1,0 +1,17 @@
+public class Solution{
+    public int islandPerimeter(int [][] grid){
+        int nLand = 0;
+        int nConnected = 0;
+        
+        for(int i=0; i<grid.length; i++){
+            for(int j=0; j< grid[i].length; j++){
+                if(grid[i][j] == 1){
+                    nLand++;
+                    if(i< grid.length-1 && grid[i+1][j] == 1) nConnected++;
+                    if(j< grid[i].length -1 && grid[i][j+1] == 1) nConnected++;
+                }
+            }
+        }
+        return (nLand*4-nConnected*2);
+    }
+}
